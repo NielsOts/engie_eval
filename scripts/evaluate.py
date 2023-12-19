@@ -28,11 +28,13 @@ def send_question_to_target(question: str, target_url: str, parameters: dict = {
             # Adjust this if your RAG chat app does not adhere to the ChatCompletion schema
             "answer": response_dict["choices"][0]["message"]["content"],
             # Adjust this to match the format of the context returned by the target
-            "context": "\n\n".join(response_dict["choices"][0]["context"]["data_points"]["text"]),
+            # "context": "\n\n".join(response_dict["choices"][0]["context"]["data_points"]["text"]),
+            "context": response_dict["choices"][0]["context"]["data_points"]["text"],
         }
         return response_obj
     except Exception as e:
         logging.error(e)
+        print("fail")
         return {
             "question": question,
             "answer": "ERROR",
@@ -132,7 +134,7 @@ def run_evaluation(
     with open(results_dir / "summary.json", "w") as summary_file:
         summary_file.write(json.dumps(metrics, indent=4))
 
-    with open(results_dir / "evaluate_parameters.json", "w") as parameters_file:
+    with open(results_dir / "parameters.json", "w") as parameters_file:
         parameters = {
             "evaluation_gpt_model": openai_config["model"],
             "evaluation_timestamp": int(time.time()),
