@@ -11,7 +11,7 @@
             "top": 3,
             "suggest_followup_questions": false
         },
-        "evaluation_gpt_model": "gpt-3.5-turbo"
+        "evaluation_gpt_model": "gpt-4"
 
     }
 }

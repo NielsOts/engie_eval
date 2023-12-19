@@ -1,0 +1,18 @@
+{
+    "evaluation_gpt_model": "gpt-35-turbo",
+    "evaluation_timestamp": 1702977697,
+    "testdata_path": "/workspaces/engie_eval/example_input/qa.jsonl",
+    "target_url": "https://app-backend-3ptxqsn6xrvwc.azurewebsites.net/chat",
+    "target_parameters": {
+        "overrides": {
+            "prompt_template": "Assistant helps the company employees with all their questions about chemistry, and questions about steam turbines, and questions about gas turbines. Be brief in your answers.\n\nAnswer ONLY with the facts listed in the list of sources below. If there isn't enough information below, say you don't know. Do not generate answers that don't use the sources below. If asking a clarifying question to the user would help, ask the question.\n\nFor tabular information return it as an html table. Do not return markdown format. If the question is not in English, answer in the language used in the question.\n\nEach source has a name followed by colon and the actual information, always include the source name for each fact you use in the response. Use square brackets to reference the source, for example [info1.txt]. Don't combine sources, list each source separately, for example [info1.txt][info2.pdf].\n        ",
+            "retrieval_mode": "hybrid",
+            "semantic_ranker": false,
+            "semantic_captions": false,
+            "top": 3,
+            "suggest_followup_questions": false
+        },
+        "evaluation_gpt_model": "gpt-4"
+    },
+    "num_questions": 4
+}
