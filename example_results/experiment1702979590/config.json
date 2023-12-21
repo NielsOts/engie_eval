@@ -1,0 +1,17 @@
+{
+    "testdata_path": "example_input/qa.jsonl",
+    "results_dir": "example_results/experiment<TIMESTAMP>",
+    "target_url": "https://app-backend-3ptxqsn6xrvwc.azurewebsites.net/chat",
+    "target_parameters": {
+        "overrides": {
+            "prompt_template": "<READFILE>example_input/prompt_refined.txt",
+            "retrieval_mode": "hybrid",
+            "semantic_ranker": false,
+            "semantic_captions": false,
+            "top": 3,
+            "suggest_followup_questions": false
+        },
+        "evaluation_gpt_model": "gpt-3.5-turbo"
+
+    }
+}
